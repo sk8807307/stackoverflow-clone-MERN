@@ -1,2 +1,2 @@
 # StackOverflow-Clone using MERN stack
-Created as a project intern at [YougetPlaced](https://nullclass.com/)
+Working as a [Project Intern](https://www.linkedin.com/in/shahkhan77) at [YougetPlaced](https://nullclass.com/)
