@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { Routes, Route } from 'react-router-dom'
-import Home from './components/pages/Home/Home'
-import Auth from './components/pages/Auth/Auth'
-import Questions from './components/pages/Questions/Questions'
-import AskQuestion from './components/pages/AskQuestion/AskQuestion'
-import DisplayQuestion from './components/pages/Questions/DisplayQuestion'
+import Home from './pages/Home/Home'
+import Auth from './pages/Auth/Auth'
+import Questions from './pages/Questions/Questions'
+import AskQuestion from './pages/AskQuestion/AskQuestion'
+import DisplayQuestion from './pages/Questions/DisplayQuestion'
 
 const AllRoutes = () => {
   return (
@@ -14,7 +14,7 @@ const AllRoutes = () => {
         <Route path='/Auth' element={<Auth />} />
         <Route path='/Questions' element={<Questions />} />
         <Route path='/AskQuestion' element={<AskQuestion />} />
-        <Route path='/DisplayQuestion' element={<DisplayQuestion />} />
+        <Route path='/Question/:id' element={<DisplayQuestion />} />
       </Routes>
   )
 }

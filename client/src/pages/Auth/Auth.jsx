@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import './Auth.css'
-import Icon from '../../../assets/icon.png'
+import React, { useState } from 'react'
+import Icon from '../../assets/icon.png'
 import AboutAuth from './AboutAuth'
+import './Auth.css'
 
 const Auth = () => {
 
@@ -14,7 +14,7 @@ const Auth = () => {
     <section class='auth-section'>
       { isSignup && <AboutAuth />}
       <div class='auth-container-2'>
-        { !isSignup && <img src={Icon} className='login-logo' /> }
+        { !isSignup && <img src={Icon} className='login-logo' alt='iconLogo'/> }
         <form>
           {
             isSignup && (
