@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import QuestionsList from './QuestionsList'
 import './HomeMainbar.css'
 
@@ -10,6 +11,7 @@ const HomeMainbar = () => {
     const user = 1;
     const navigate = useNavigate();
 
+    // const questionsList = useSelector(state => state.questionsReducer)
     var questionsList = [{ 
         _id: 1,
         upVotes: 3,
