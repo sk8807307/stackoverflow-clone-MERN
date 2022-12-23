@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import search from '../../assets/search-solid.svg'
 import Avatar from '../../components/Avatar/Avatar'
-import Button from '../../components/Button/Button'
 import './Navbar.css'
 
 const Navbar = () => {
