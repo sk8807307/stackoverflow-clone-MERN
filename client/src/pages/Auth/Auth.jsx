@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
 import Icon from '../../assets/icon.png'
 import AboutAuth from './AboutAuth'
-import './Auth.css'
 import { signup, login } from '../../actions/auth'
+import './Auth.css'
+
 const Auth = () => {
 
   const [isSignup, setIsSignup] = useState(false)
@@ -30,19 +32,19 @@ const Auth = () => {
         alert("Enter a name to continue")
       }
 
-      signup({name, email,password}, navigate)
+      dispatch(signup({name, email,password}, navigate))
 
     }else{
 
-      login({email,password}, navigate)
+      dispatch(login({email,password}, navigate))
 
     }
   }
 
   return (
-    <section class='auth-section'>
+    <section className='auth-section'>
       { isSignup && <AboutAuth />}
-      <div class='auth-container-2'>
+      <div className='auth-container-2'>
         { !isSignup && <img src={Icon} className='login-logo' alt='iconLogo'/> }
         <form onSubmit={handleSubmit}>
           {
