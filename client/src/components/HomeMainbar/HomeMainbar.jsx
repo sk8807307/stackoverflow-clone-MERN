@@ -6,12 +6,13 @@ import './HomeMainbar.css'
 
 const HomeMainbar = () => {
 
-
     const location = useLocation();
     const user = 1;
     const navigate = useNavigate();
 
-    // const questionsList = useSelector(state => state.questionsReducer)
+    const questionsLis = useSelector(state => state.questionsReducer)
+    console.log(questionsLis)
+
     var questionsList = [{ 
         _id: 1,
         upVotes: 3,
