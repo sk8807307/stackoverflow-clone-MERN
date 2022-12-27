@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import QuestionsList from './QuestionsList'
+import QuestionList from './QuestionList'
 import './HomeMainbar.css'
 
 const HomeMainbar = () => {
@@ -10,61 +10,62 @@ const HomeMainbar = () => {
     const user = 1;
     const navigate = useNavigate();
 
-    const questionsLis = useSelector(state => state.questionsReducer)
-    console.log(questionsLis)
+    const questionsList = useSelector(state => state.questionsReducer)
 
-    var questionsList = [{ 
-        _id: 1,
-        upVotes: 3,
-        downVotes: 2,
-        noOfAnswers: 2,
-        questionTitle: "What is a function?",
-        questionBody: "It meant to be",
-        questionTags: ["java", "node js", "react js", "mongo db", "express js"],
-        userPosted: "mano",
-        userId: 1,
-        askedOn: "jan 1",
-        answer: [{
-            answerBody: "Answer",
-            userAnswered: 'kumar',
-            answeredOn: "jan 2",
-            userId: 2,
-        }]
-    },{ 
-        _id: 2,
-        upVotes: 0,
-        downVotes: 2,
-        noOfAnswers: 0,
-        questionTitle: "What is a function?",
-        questionBody: "It meant to be",
-        questionTags: ["javascript", "R", "python"],
-        userPosted: "mano",
-        askedOn: "jan 1",
-        userId: 1,
-        answer: [{
-            answerBody: "Answer",
-            userAnswered: 'kumar',
-            answeredOn: "jan 2",
-            userId: 2,
-        }]
-    },{ 
-        _id: 3,
-        upVotes: 1,
-        downVotes: 2,
-        noOfAnswers: 0,
-        questionTitle: "What is a function?",
-        questionBody: "It meant to be",
-        questionTags: ["javascript", "R", "python"],
-        userPosted: "mano",
-        askedOn: "jan 1",
-        userId: 1,
-        answer: [{
-            answerBody: "Answer",
-            userAnswered: 'kumar',
-            answeredOn: "jan 2",
-            userId: 2,
-        }]
-    }]
+    // console.log(questionsList)
+    // var questionsList = [{ 
+    //     _id: 1,
+    //     upVotes: 3,
+    //     downVotes: 2,
+    //     noOfAnswers: 2,
+    //     questionTitle: "What is a function?",
+    //     questionBody: "It meant to be",
+    //     questionTags: ["java", "node js", "react js", "mongo db", "express js"],
+    //     userPosted: "mano",
+    //     userId: 1,
+    //     askedOn: "jan 1",
+    //     answer: [{
+    //         answerBody: "Answer",
+    //         userAnswered: 'kumar',
+    //         answeredOn: "jan 2",
+    //         userId: 2,
+    //     }]
+    // },{ 
+    //     _id: 2,
+    //     upVotes: 0,
+    //     downVotes: 2,
+    //     noOfAnswers: 0,
+    //     questionTitle: "What is a function?",
+    //     questionBody: "It meant to be",
+    //     questionTags: ["javascript", "R", "python"],
+    //     userPosted: "mano",
+    //     askedOn: "jan 1",
+    //     userId: 1,
+    //     answer: [{
+    //         answerBody: "Answer",
+    //         userAnswered: 'kumar',
+    //         answeredOn: "jan 2",
+    //         userId: 2,
+    //     }]
+    // },{ 
+    //     _id: 3,
+    //     upVotes: 1,
+    //     downVotes: 2,
+    //     noOfAnswers: 0,
+    //     questionTitle: "What is a function?",
+    //     questionBody: "It meant to be",
+    //     questionTags: ["javascript", "R", "python"],
+    //     userPosted: "mano",
+    //     askedOn: "jan 1",
+    //     userId: 1,
+    //     answer: [{
+    //         answerBody: "Answer",
+    //         userAnswered: 'kumar',
+    //         answeredOn: "jan 2",
+    //         userId: 2,
+    //     }]
+    // }]
+
 
   const checkAuth = () => {
     if(user === null){
@@ -86,11 +87,11 @@ const HomeMainbar = () => {
       </div>
       <div>
         {
-          questionsList === null ?
+          questionsList.data === null ?
           <h1>Loading...</h1> :
           <>
-            <p>{questionsList.length} questions</p>
-            <QuestionsList questionsList={questionsList} />
+            <p>{questionsList.data.length} questions</p>
+            <QuestionList questionsList={questionsList.data} />
           </>
         }
       </div>
