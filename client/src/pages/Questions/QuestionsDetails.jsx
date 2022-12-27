@@ -6,11 +6,10 @@ import downVotes from '../../assets/sort-down.svg'
 import Avatar from '../../components/Avatar/Avatar'
 import DisplayAnswer from "./DisplayAnswer";
 import './Questions.css'
-import { postAnswer } from '../../actions/question'
+import { postAnswer } from '../../actions/question.js'
 const QuestionsDetails = () => {
   const { id } = useParams();
   const questionsList = useSelector(state => state.questionsReducer)
-  console.log(questionsList)
   // var questionsList = [
   //   {
   //     _id: '1',
@@ -148,7 +147,7 @@ const QuestionsDetails = () => {
                     <section className="post-ans-container">
                       <h3>Your Answer</h3>
                       <form onSubmit={ (e) => {handlePosAns(e, question.answer.length) }}>
-                        <textarea name="" id="" cols="30" rows="10" onChange={e => setAnswer(e.target.value)}></textarea>
+                        <textarea name="" id="" cols="30" rows="10" onChange={(e) => {setAnswer(e.target.value)}}></textarea>
                         <input type="submit" className="post-ans-btn" value='Post the answer' />
                       </form>
                       <p>
