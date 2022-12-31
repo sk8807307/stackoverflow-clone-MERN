@@ -3,17 +3,17 @@ import { useParams, Link, useNavigate, useLocation } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
 import copy from 'copy-to-clipboard'
 import moment from 'moment'
+import { postAnswer, deleteQuestion } from '../../actions/question'
 import upVotes from '../../assets/sort-up.svg'
 import downVotes from '../../assets/sort-down.svg'
 import Avatar from '../../components/Avatar/Avatar'
 import DisplayAnswer from "./DisplayAnswer"
 import './Questions.css'
-import { postAnswer, deleteQuestion } from '../../actions/question'
 
 const QuestionsDetails = () => {
   const { id } = useParams();
   const questionsList = useSelector(state => state.questionsReducer)
-  console.log(questionsList)
+  // console.log(questionsList)
   // var questionsList = [
   //   {
   //     _id: '1',
@@ -96,7 +96,6 @@ const QuestionsDetails = () => {
       }
     }
   }
-
   const handleShare = () => {
     copy(url+location.pathname)
     alert('Copied url : '+url+location.pathname)
