@@ -24,7 +24,7 @@
 .votes-icon{
     font-size: 40px;
     cursor: pointer;
-    color: rgb(206, 203, 203);
+    color: rgb(203, 203, 203);
 }
 .votes-icon:active{
     color: #ef8236;
