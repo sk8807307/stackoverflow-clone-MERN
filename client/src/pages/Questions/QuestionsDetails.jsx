@@ -82,7 +82,7 @@ const QuestionsDetails = () => {
             if(Answer === ''){
                 alert('Enter an answer before submitting')
             } else{
-                dispatch(postAnswer({ id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name }))
+                dispatch(postAnswer({ id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name, userId:User.result._id }))
             }
         }
     }
@@ -97,11 +97,11 @@ const QuestionsDetails = () => {
     }
 
     const handleUpVote = () => {
-        dispatch(voteQuestion(id, 'upVote'))
+        dispatch(voteQuestion(id, 'upVote', userId))
     }
 
     const handleDownVote = () => {
-        dispatch(voteQuestion(id, 'downVote'))
+        dispatch(voteQuestion(id, 'downVote', userId))
     }
 
     return (
@@ -164,7 +164,7 @@ const QuestionsDetails = () => {
                                     <h3>Your Answer</h3>
                                     <form onSubmit={ (e) => { handlePostAns(e, question.answer.length) }}>
                                         <textarea name="" id="" cols="30" rows="10" onChange={e => setAnswer(e.target.value)}></textarea><br />
-                                        <input type="Submit" className='post-ans-btn' value='Post Your Answer'/>
+                                        <input type="Submit" className='post-ans-btn' value='Post Your Answer' readOnly/>
                                     </form>
                                     <p>
                                         Browse other Question tagged

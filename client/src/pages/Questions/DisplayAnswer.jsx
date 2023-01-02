@@ -25,10 +25,10 @@ const DisplayAnswer = ({question, handleShare}) => {
                 <div>
                   <button type="button" onClick={handleShare}>Share</button>
                   {
-                                  User?.result?._id === ans?.userId && (
-                                    <button type="button" onClick={() => handleDelete(ans._id, question.noOfAnswers)}>Delete</button>
-                                  )
-                                }
+                      User?.result?._id === question?.userId && (
+                      <button type='button' onClick={() => handleDelete(ans._id, question.noOfAnswersl)}>Delete</button>
+                      )
+                  }
                 </div>
                 <div>
                   <p>answered {moment(ans.answeredOn).fromNow()}</p>

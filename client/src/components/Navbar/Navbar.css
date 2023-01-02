@@ -65,7 +65,7 @@
     top: 8px;
 }
 
-.nav-link {
+.nav-links {
     padding: 7px 13px;
     border: solid 1px blue;
     border-radius: 3px;
@@ -73,6 +73,6 @@
     cursor: pointer;
 }
 
-.nav-link:hover {
+.nav-links:hover {
     background-color: #d3e4eb;
 }
