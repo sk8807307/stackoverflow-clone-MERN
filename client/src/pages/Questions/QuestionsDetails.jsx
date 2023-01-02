@@ -82,7 +82,7 @@ const QuestionsDetails = () => {
             if(Answer === ''){
                 alert('Enter an answer before submitting')
             } else{
-                dispatch(postAnswer({ id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name, userId:User.result._id }))
+                dispatch(postAnswer({ id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name }))
             }
         }
     }
@@ -97,11 +97,11 @@ const QuestionsDetails = () => {
     }
 
     const handleUpVote = () => {
-        dispatch(voteQuestion(id, 'upVote', userId))
+        dispatch(voteQuestion(id, 'upVote'))
     }
 
     const handleDownVote = () => {
-        dispatch(voteQuestion(id, 'downVote', userId))
+        dispatch(voteQuestion(id, 'downVote'))
     }
 
     return (
