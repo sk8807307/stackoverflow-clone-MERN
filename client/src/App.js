@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import { fetchAllQuestions } from './actions/question';
 import AllRoutes from './AllRoutes';
+import { fetchAllUsers } from './actions/users';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchAllQuestions())
+    dispatch(fetchAllUsers())
   }, [dispatch])
 
   return (
