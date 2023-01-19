@@ -14,7 +14,7 @@ import { postAnswer, deleteQuestion, voteQuestion } from '../../actions/question
 const QuestionsDetails = () => {
     const { id } = useParams()
     const questionsList = useSelector(state => state.questionsReducer)
-    console.log(questionsList)
+    // console.log(questionsList)
     // var questionsList = [{ 
     //     _id: '1',
     //     upVotes: 3,
