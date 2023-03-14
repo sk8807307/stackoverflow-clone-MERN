@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import { fetchAllQuestions } from './actions/question';
 import AllRoutes from './AllRoutes';
 import { fetchAllUsers } from './actions/users';
-
+import ChatBotWidget from './components/ChatBot/ChatBotWidget';
 function App() {
 
   const dispatch = useDispatch()
@@ -21,6 +21,7 @@ function App() {
       <Router>
         <Navbar />
         <AllRoutes />
+      <ChatBotWidget />
       </Router>
     </div>
   );
