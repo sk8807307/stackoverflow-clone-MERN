@@ -1,0 +1,17 @@
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Dependencies & Build outputs
+node_modules/
+__pycache__/
+*.pyc
+
+# Logs & OS metadata
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+*scripts.py
